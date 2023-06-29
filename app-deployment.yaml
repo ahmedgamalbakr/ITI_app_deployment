@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: simple-node
-          image: 10.96.218.213:5000/simple-node-app'
+          image: 10.96.218.213:5000/simple-node-app
           ports:
             - name: httpport
               containerPort: 3000
