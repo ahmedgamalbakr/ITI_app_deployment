@@ -6,9 +6,9 @@ pipeline{
         stage("CI"){
             steps {
                 withCredentials([usernamePassword(credentialsId: 'nexus_credentials',usernameVariable: 'NEXUS_USERNAME',passwordVariable: 'NEXUS_PASS')]){
-                  sh 'docker build . -t nexuspath/simple-node-app'
-                  sh 'docker login IP:PORT -u ${NEXUS_USERNAME}  -p ${NEXUS_PASS}'
-                  sh 'docker push nexuspath/simple-node-app'
+                  sh 'docker build . -t 10.96.218.213:5000/simple-node-app'
+                  sh 'docker login 10.96.218.213:5000 -u ${NEXUS_USERNAME}  -p ${NEXUS_PASS}'
+                  sh 'docker push 10.96.218.213:5000/simple-node-app'
                 }
             }
         }
