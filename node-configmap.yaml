@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: node-configmap
+  namespace: dev
+data:
+  HOST: mysql
+  DATABASE: iti
+  USERNAME: root

@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-node
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-node-server
+  template:
+    metadata:
+      labels:
+        app: simple-node-server
+    spec:
+      containers:
+        - name: simple-node
+          image: elnabawy/simple-node
+          ports:
+            - name: httpport
+              containerPort: 3000
+          env:
+          - name: PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: password
+          - name: HOST
+            valueFrom:
+              configMapKeyRef:
+                name: node-configmap
+                key: HOST
+          - name: DATABASE
+            valueFrom:
+              configMapKeyRef:
+                name: node-configmap
+                key: DATABASE
+          - name: USERNAME
+            valueFrom:
+              configMapKeyRef:
+                name: node-configmap
+                key: USERNAME
+      imagePullSecrets:
+      - name: regcred
+              
