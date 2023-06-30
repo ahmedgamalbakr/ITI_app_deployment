@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: simple-node
-          image: 10.96.38.38:5000/repository/docker-repo/simple-node-app:latest
+          image: 10.98.11.64:5000/repository/docker-repo/simple-node-app:latest
           ports:
             - name: httpport
               containerPort: 3000
