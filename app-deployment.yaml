@@ -19,4 +19,6 @@ spec:
           ports:
             - name: httpport
               containerPort: 3000
+      imagePullSecrets:
+      - name: regcred
               
