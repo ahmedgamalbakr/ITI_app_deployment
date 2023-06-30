@@ -19,11 +19,6 @@ pipeline{
                   sh 'kubectl apply -f app-deployment.yaml'
                   sh 'kubectl apply -f app-svc.yaml'
                 }
-                
-                       
-                    
-                
-
             }
         }
     }
