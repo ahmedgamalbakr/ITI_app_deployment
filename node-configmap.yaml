@@ -4,6 +4,6 @@ metadata:
   name: node-configmap
   namespace: dev
 data:
-  HOST: mysql
+  HOST: mysql-svc
   DATABASE: iti
   USERNAME: root
